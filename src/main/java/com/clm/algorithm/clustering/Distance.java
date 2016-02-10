@@ -2,7 +2,7 @@ package com.clm.algorithm.clustering;
 
 public class Distance implements Comparable<Distance>, Cloneable {
 
-    private Double distance;
+    private Double distance; 
 	private Double weight;
 
     public Distance() {
@@ -39,7 +39,7 @@ public class Distance implements Comparable<Distance>, Cloneable {
     }
 
     @Override
-    public int compareTo(Distance distance) {
+    public int compareTo(Distance distance) { 
         return distance == null ? 1 : getDistance().compareTo(distance.getDistance());
     }
 
