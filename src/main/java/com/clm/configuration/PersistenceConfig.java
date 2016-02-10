@@ -29,12 +29,12 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @author Siva
+ * @author Narendra
  *
  */
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages="com.websystique.springsecurity.repositories")
+@EnableJpaRepositories(basePackages="com.clm.repositories")
 @PropertySource("classpath:application.properties")
 public class PersistenceConfig {
 

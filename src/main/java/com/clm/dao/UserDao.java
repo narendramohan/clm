@@ -8,7 +8,7 @@ import java.util.List;
 import com.clm.entities.User;
 
 /**
- * @author katsi02
+ * @author Narendra
  *
  */
 public interface UserDao {

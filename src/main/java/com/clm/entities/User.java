@@ -19,7 +19,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * @author katsi02
+ * @author Narendra
  *
  */
 @Entity

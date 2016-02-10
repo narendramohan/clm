@@ -15,7 +15,7 @@ import com.clm.entities.Role;
 import com.clm.entities.User;
 
 /**
- * @author Siva
+ * @author Narendra
  *
  */
 public class SecurityUser extends User implements UserDetails

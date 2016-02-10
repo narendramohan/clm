@@ -12,8 +12,8 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.websystique.springsecurity")
-public class HelloWorldConfiguration extends WebMvcConfigurerAdapter {
+@ComponentScan(basePackages = "com.clm")
+public class CLMConfiguration extends WebMvcConfigurerAdapter {
 	
 	@Bean(name="HelloWorld")
 	public ViewResolver viewResolver() {

@@ -13,7 +13,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 import com.sivalabs.springapp.config.AppConfig;
 
 *//**
- * @author Siva
+ * @author Narendra
  *
  *//*
 public class SpringWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
