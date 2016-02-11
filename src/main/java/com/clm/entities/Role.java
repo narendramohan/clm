@@ -26,7 +26,7 @@ public class Role implements Serializable
 	@Column(name = "role_id")
 	private Integer id;
 	@Column(name="role_name",nullable=false)
-	private String roleName;
+	private String roleName=UserProfileType.USER.getUserProfileType();
 	
 	public Role() {
 	}

@@ -64,6 +64,22 @@ public class UserService
 	public User findUserByEmail(String email) {
 		return userRepository.findUserByEmail(email);
 	}
+
+	public void saveUser(User user) {
+		userRepository.save(user);
+		
+	}
+
+	public boolean isUserSSOUnique(int id, String email) {
+		User user = userRepository.findUserByEmail(email);
+		return user!=null;
+	}
+
+	public void deleteUserBySSO(String email) {
+		User user = userRepository.findUserByEmail(email);
+		userRepository.delete(user.getId());
+		
+	}
 	
 	
 }

@@ -39,6 +39,11 @@ public class User
 	@JoinColumn(name="user_id")
 	private Set<Role> roles = new HashSet<>();
 	
+	@Column(nullable=false)
+	private String firstName;
+	@Column(nullable=false)
+	private String lastName;
+	
 	public User() {
 	}
 
@@ -102,6 +107,14 @@ public class User
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+
+	public String getFirstName() {
+		return this.firstName;
+	}
+
+	public String getLastName() {
+		return this.lastName;
 	}
 	
 }

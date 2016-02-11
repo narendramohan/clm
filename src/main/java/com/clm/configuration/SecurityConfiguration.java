@@ -22,17 +22,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	private CustomUserDetailsService customUserDetailsService;
 	@Override
     protected void configure(AuthenticationManagerBuilder registry) throws Exception {
-		/*
-        registry
-        .inMemoryAuthentication()
-        .withUser("siva")  // #1
-          .password("siva")
-          .roles("USER")
-          .and()
-        .withUser("admin") // #2
-          .password("admin")
-          .roles("ADMIN","USER");
-        */
+		
         
        // registry.jdbcAuthentication().dataSource(dataSource);
 		registry.userDetailsService(customUserDetailsService);

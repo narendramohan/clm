@@ -9,9 +9,11 @@ CREATE TABLE users (
   dob datetime DEFAULT NULL,
   email varchar(255) NOT NULL,
   name varchar(255) DEFAULT NULL,
+  first_name VARCHAR(50) NOT NULL,
+  last_name  VARCHAR(50) NOT NULL,
   password varchar(255) NOT NULL,
   PRIMARY KEY (id),
-  UNIQUE KEY UK_avh1b2ec82audum2lyjx2p1ws (email)
+  UNIQUE KEY UK_email (email)
 );
 
 CREATE TABLE roles (
