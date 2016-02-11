@@ -28,11 +28,12 @@ public class User
 {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	private String name;
+	//private String name;
 	@Column(nullable=false, unique=true)
 	private String email;
 	@Column(nullable=false)
 	private String password;
+	@Column(nullable=false)
 	private Date dob;
 	
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
@@ -49,7 +50,7 @@ public class User
 
 	public User(int id, String name, String email, String password, Date dob) {
 		this.id = id;
-		this.name = name;
+		//this.name = name;
 		this.email = email;
 		this.password = password;
 		this.dob = dob;
@@ -57,7 +58,7 @@ public class User
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", email=" + email
+		return "User [id=" + id + ", fname=" + firstName + ", email=" + email
 				+ ", dob=" + dob + "]";
 	}
 
@@ -67,14 +68,6 @@ public class User
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getEmail() {

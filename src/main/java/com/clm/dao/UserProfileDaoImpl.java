@@ -20,16 +20,16 @@ public class UserProfileDaoImpl extends AbstractDao<Integer, Role>implements Use
 		return getByKey(id);
 	}
 
-	public Role findByType(String type) {
+	public Role findByType(String name) {
 		Criteria crit = createEntityCriteria();
-		crit.add(Restrictions.eq("type", type));
+		crit.add(Restrictions.eq("name", name));
 		return (Role) crit.uniqueResult();
 	}
 	
 	@SuppressWarnings("unchecked")
 	public List<Role> findAll(){
 		Criteria crit = createEntityCriteria();
-		crit.addOrder(Order.asc("type"));
+		crit.addOrder(Order.asc("name"));
 		return (List<Role>)crit.list();
 	}
 	
