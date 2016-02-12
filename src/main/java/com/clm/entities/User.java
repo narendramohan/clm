@@ -33,7 +33,7 @@ public class User
 	private String email;
 	@Column(nullable=false)
 	private String password;
-	@Column(nullable=false)
+	@Column(nullable=true)
 	private Date dob;
 	
 	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
@@ -108,6 +108,14 @@ public class User
 
 	public String getLastName() {
 		return this.lastName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	
 }

@@ -22,14 +22,14 @@ public class UserProfileDaoImpl extends AbstractDao<Integer, Role>implements Use
 
 	public Role findByType(String name) {
 		Criteria crit = createEntityCriteria();
-		crit.add(Restrictions.eq("name", name));
+		crit.add(Restrictions.eq("roleName", name));
 		return (Role) crit.uniqueResult();
 	}
 	
 	@SuppressWarnings("unchecked")
 	public List<Role> findAll(){
 		Criteria crit = createEntityCriteria();
-		crit.addOrder(Order.asc("name"));
+		crit.addOrder(Order.asc("roleName"));
 		return (List<Role>)crit.list();
 	}
 	

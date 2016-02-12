@@ -43,7 +43,7 @@ public class UserController {
 	/**
 	 * This method will list all existing users.
 	 */
-	@RequestMapping(value = { "/admin", "admin/list" }, method = RequestMethod.GET)
+	@RequestMapping(value = { "/admin", "/list" }, method = RequestMethod.GET)
 	public String listUsers(ModelMap model) {
 
 		List<User> users = userService.findAll();
@@ -82,8 +82,10 @@ public class UserController {
 		 * framework as well while still using internationalized messages.
 		 * 
 		 */
+		System.out.println(user.getEmail());
+		System.out.println(userService.isUserSSOUnique(user.getId(), user.getEmail()));
 		if(!userService.isUserSSOUnique(user.getId(), user.getEmail())){
-			FieldError ssoError =new FieldError("user","ssoId",messageSource.getMessage("non.unique.ssoId", new String[]{user.getEmail()}, Locale.getDefault()));
+			FieldError ssoError =new FieldError("user","email",messageSource.getMessage("non.unique.email", new String[]{user.getEmail()}, Locale.getDefault()));
 		    result.addError(ssoError);
 			return "registration";
 		}

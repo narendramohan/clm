@@ -4,12 +4,15 @@
 package com.clm.services;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.clm.entities.Role;
 import com.clm.entities.User;
+import com.clm.repositories.RoleRepository;
 import com.clm.repositories.UserRepository;
 
 
@@ -25,7 +28,7 @@ public class UserService
 	
 	@Autowired
 	private UserRepository userRepository;
-	
+	private RoleRepository roleRepository;
 	/*
 	@Autowired
 	public UserService(UserDao userDao) {
@@ -66,13 +69,15 @@ public class UserService
 	}
 
 	public void saveUser(User user) {
+		Set<Role> roles = user.getRoles();
 		userRepository.save(user);
-		
+		System.out.println(roles);
+		roleRepository.save(roles);
 	}
 
 	public boolean isUserSSOUnique(int id, String email) {
 		User user = userRepository.findUserByEmail(email);
-		return user!=null;
+		return user==null;
 	}
 
 	public void deleteUserBySSO(String email) {

@@ -13,32 +13,25 @@
 	<div class="generic-container">
 		<div class="panel panel-default">
 			  <!-- Default panel contents -->
-		  	<div class="panel-heading"><span class="lead">List of Users </span></div>
+		  	<div class="panel-heading"><span class="lead">List of Topics </span></div>
 			<table class="table table-hover">
 	    		<thead>
 		      		<tr>
-				        <th>Firstname</th>
-				        <th>Lastname</th>
-				        <th>Email</th>
-				        <th width="100"></th>
-				        <th width="100"></th>
+				        <th>Topic</th>
 					</tr>
 		    	</thead>
 	    		<tbody>
-				<c:forEach items="${users}" var="user">
+				<c:forEach items="${topics}" var="topic">
 					<tr>
-						<td>${user.firstName}</td>
-						<td>${user.lastName}</td>
-						<td>${user.email}</td>
-						<td><a href="<c:url value='/edit-user-${user.email}' />" class="btn btn-success custom-width">edit</a></td>
-						<td><a href="<c:url value='/delete-user-${user.email}' />" class="btn btn-danger custom-width">delete</a></td>
+						<td>${topic.name}</td>
+						<td><a href="#a" class="btn btn-danger custom-width" title="not implemented">delete</a></td>
 					</tr>
 				</c:forEach>
 	    		</tbody>
 	    	</table>
 		</div>
 	 	<div class="well">
-	 		<a href="<c:url value='/admin/newuser' />">Add New User</a>
+	 		<a href="#a" title="not implemented">Add New Topic</a>
 	 	</div>
    	</div>
 </body>
