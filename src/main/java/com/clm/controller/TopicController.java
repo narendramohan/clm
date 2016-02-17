@@ -16,9 +16,9 @@ import com.clm.services.TopicService;
 
 /*
  * As per the paper currently considering following Topics 
- Apple 
- Jared Allen 
- Bin Laden
+Apple 
+Jared Allen 
+Bin Laden
 Eyedea 
 Herman Cain 
 Diddy Dirty Money

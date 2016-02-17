@@ -4,7 +4,7 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Topic List</title>
+	<title>Facebook posts</title>
 	<link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
 	<link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 </head>
@@ -17,22 +17,22 @@
 			<table class="table table-hover">
 	    		<thead>
 		      		<tr>
-				        <th>Topic</th>
+				        <th>Posts</th>
 					</tr>
 		    	</thead>
 	    		<tbody>
-				<c:forEach items="${topics}" var="topic">
+				<c:forEach items="${posts}" var="post">
 					<tr>
-						<td>${topic.name}</td>
-						<td><a href="#a" class="btn btn-danger custom-width" title="not implemented">delete</a></td>
+						<td>${post.message}</td>
+						<td>${post.description}</td>
 					</tr>
 				</c:forEach>
 	    		</tbody>
 	    	</table>
 		</div>
-	 	<div class="well">
+	 	<!-- <div class="well">
 	 		<a href="#a" title="not implemented">Add New Topic</a>
-	 	</div>
+	 	</div> -->
    	</div>
 </body>
 </html>

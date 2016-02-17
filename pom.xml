@@ -10,12 +10,13 @@
 	<name>clm1</name>
 
 	<properties>
+		<basedir>C:/Users/Narendra/Documents/GitHub/clm/src/main/webapp/WEB-INF/lib</basedir>
 		<springframework.version>4.1.6.RELEASE</springframework.version>
 		<springsecurity.version>4.0.1.RELEASE</springsecurity.version>
 		<spring-data-jpa.version>1.9.2.RELEASE</spring-data-jpa.version>
 		<hibernate.version>4.2.6.Final</hibernate.version>
-					<commons-dbcp.version>1.2.2</commons-dbcp.version>
-			<commons-lang3.version>3.1</commons-lang3.version>
+		<commons-dbcp.version>1.2.2</commons-dbcp.version>
+		<commons-lang3.version>3.1</commons-lang3.version>
 	</properties>
 
 	<dependencies>
@@ -43,7 +44,7 @@
 			<version>${spring-data-jpa.version}</version>
 		</dependency>
 
-		
+
 		<!-- Spring Security -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -91,7 +92,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.6</version>
 		</dependency>
-				<dependency>
+		<dependency>
 			<groupId>org.springframework.social</groupId>
 			<artifactId>spring-social-core</artifactId>
 			<version>1.1.4.RELEASE</version>
@@ -102,14 +103,14 @@
 			<version>1.1.4.RELEASE</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.springframework.social</groupId>
-		    <artifactId>spring-social-security</artifactId>
-	        <version>1.1.4.RELEASE</version>
-	    </dependency>
-	    <dependency> 
-		   <groupId>org.springframework.security</groupId>
-		   <artifactId>spring-security-config</artifactId>
-		   <version>3.2.9.RELEASE</version>
+			<groupId>org.springframework.social</groupId>
+			<artifactId>spring-social-security</artifactId>
+			<version>1.1.4.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>3.2.9.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.social</groupId>
@@ -122,26 +123,56 @@
 			<version>1.1.0.RELEASE</version>
 		</dependency>
 		<dependency>
-	<groupId>commons-lang</groupId>
-	<artifactId>commons-lang</artifactId>
-	<version>2.6</version>
-</dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
 		<dependency>
-	<groupId>net.sf.ezmorph</groupId>
-	<artifactId>ezmorph</artifactId>
-	<version>1.0.6</version>
-</dependency>
+			<groupId>net.sf.ezmorph</groupId>
+			<artifactId>ezmorph</artifactId>
+			<version>1.0.6</version>
+		</dependency>
 		<dependency>
-	<groupId>commons-collections</groupId>
-	<artifactId>commons-collections</artifactId>
-	<version>3.2.2</version>
-</dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.2</version>
+		</dependency>
 		<dependency>
-	<groupId>commons-beanutils</groupId>
-	<artifactId>commons-beanutils</artifactId>
-	<version>1.9.2</version>
-</dependency>
-		
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>nz.ac.waikato.cms.weka</groupId>
+			<artifactId>weka-stable</artifactId>
+			<version>3.6.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.opennlp</groupId>
+			<artifactId>opennlp-tools</artifactId>
+			<version>1.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.facebook4j</groupId>
+			<artifactId>facebook4j-core</artifactId>
+			<version>2.4.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.facebookapi</groupId>
+			<artifactId>facebook-java-api</artifactId>
+			<version>3.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.json</groupId>
+			<artifactId>javax.json-api</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.facebook.api</groupId>
+			<artifactId>facebook-util</artifactId>
+			<version>1.8.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -158,14 +189,14 @@
 					</configuration>
 				</plugin>
 				<plugin>
-			        <groupId>org.apache.maven.plugins</groupId>
-			        <artifactId>maven-compiler-plugin</artifactId>
-			        <version>3.1</version>
-			        <configuration>
-			            <source>1.7</source>
-			            <target>1.7</target>
-			        </configuration>
-			    </plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<finalName>clm</finalName>
