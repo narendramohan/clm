@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.clm.dao.UserDao;
 import com.clm.entities.Role;
 import com.clm.entities.User;
 import com.clm.repositories.RoleRepository;
@@ -24,7 +25,8 @@ import com.clm.repositories.UserRepository;
 @Transactional
 public class UserService 
 {
-	//private UserDao userDao;
+	@Autowired
+	private UserDao userDao;
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -69,10 +71,11 @@ public class UserService
 	}
 
 	public void saveUser(User user) {
-		Set<Role> roles = user.getRoles();
+		/*Set<Role> roles = user.getRoles();
 		userRepository.save(user);
 		System.out.println(roles);
-		roleRepository.save(roles);
+		roleRepository.save(roles);*/
+		userDao.create(user);
 	}
 
 	public boolean isUserSSOUnique(int id, String email) {

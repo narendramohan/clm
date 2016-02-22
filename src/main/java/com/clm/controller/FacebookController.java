@@ -11,8 +11,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Properties;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.social.connect.Connection;
 import org.springframework.social.facebook.api.PagedList;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
@@ -28,6 +31,8 @@ import com.clm.algorithm.clustering.Cluster;
 import com.clm.algorithm.clustering.ClusteringAlgo;
 import com.clm.algorithm.clustering.DefClusteringAlgo;
 import com.clm.algorithm.clustering.WeightedLinkageStrategy;
+import com.clm.entities.User;
+import com.clm.services.UserService;
 
 import facebook4j.Facebook;
 import facebook4j.FacebookException;
@@ -108,6 +113,7 @@ public class FacebookController {
 				System.out.println(post.getMessage());
 			}*/
 			model.addAttribute("posts", posts);
+			model.addAttribute("user", getPrincipal());
 			/*
 			 * Facebook facebook = new FacebookFactory().getInstance();
 			 * facebook.setOAuthAppId(appId, appSec);
@@ -238,4 +244,21 @@ public class FacebookController {
 		    new WeightedLinkageStrategy());
 		cluster.toConsole(15);
 	}	
+	
+	@Autowired
+	UserService userService;
+	private String getPrincipal(){
+		String userName = null;
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+		if (principal instanceof UserDetails) {
+			userName = ((UserDetails)principal).getUsername();
+		} else {
+			userName = principal.toString();
+		}
+		User user = userService.findUserByEmail(userName);
+		String name = user.getFirstName()+" "+user.getLastName();
+		return name;
+	}	
+	
 }

@@ -42,11 +42,8 @@
 				
 					
                     <li>
-                        <a href="<c:url value='/home' />"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a class="active-menu"  href="#a"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
-                    <li  >
-                        <a  class="active-menu"  href="admin/list"><i class="fa fa-edit fa-3x"></i> Users </a>
-                    </li>	
                      <!-- <li>
                         <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
                     </li>
@@ -112,22 +109,57 @@
                   <hr />
                           <!-- /. ROW  -->
             	<div class="row">
+            	
+            		<div class="col-md-12">
+                    	<div class="panel panel-info">
+                        <div class="panel-heading">
+                            Clusters <a href="clusters" class="btn btn-primary">Get Clusters</a>
+                        </div>
+                        <div class="panel-body">
+                        <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Clusters</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    	<tr>
+                                       <td>${clusters}</td>
+                                       </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            
+                        </div>
+                      </div>
+                      </div>
+            	
             		<div class="col-md-12">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            User Saved 
+                            Facebook posts <a href="facebook" class="btn btn-primary">Get Posts</a>
                         </div>
                         <div class="panel-body">
-                        	<div class="alert alert-success lead">
-						    	${success}
-							</div>
-							
-							<span class="well floatRight">
-								Go to <a href="<c:url value='/admin/list' />">Users List</a>
-							</span>
-                        
+                        <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Message</th>
+                                            <th>description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       nothing to display
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                        
+                        <div class="panel-footer">
+                            
+                        </div>
                       </div>
                       </div>
                       
@@ -150,28 +182,41 @@
 </body>
 </html>
 
-
 <%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
 <html>
+
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Registration Confirmation Page</title>
+	<title>Topic List</title>
 	<link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
 	<link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
 </head>
-<body>
-<div class="generic-container">
-	<div class="alert alert-success lead">
-    	${success}
-	</div>
-	
-	<span class="well floatRight">
-		Go to <a href="<c:url value='/list' />">Users List</a>
-	</span>
-</div>
-</body>
 
+<body>
+	<div class="generic-container">
+		<div class="panel panel-default">
+			  <!-- Default panel contents -->
+		  	<div class="panel-heading"><span class="lead">List of Topics </span></div>
+			<table class="table table-hover">
+	    		<thead>
+		      		<tr>
+				        <th>Topic</th>
+					</tr>
+		    	</thead>
+	    		<tbody>
+				
+					<tr>
+						<td>${clusters}</td>
+						
+					</tr>
+				
+	    		</tbody>
+	    	</table>
+		</div>
+	 	<!-- <div class="well">
+	 		<a href="#a" title="not implemented">Add New Topic</a>
+	 	</div> -->
+   	</div>
+</body>
 </html> --%>

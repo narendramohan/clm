@@ -13,7 +13,7 @@ public interface UserRepository extends JpaRepository<User, Serializable>{
 	User login(String email, String password);
 
 	User findByEmailAndPassword(String email, String password);
-
+	@Query("select u from User u where u.email=?1")
 	User findUserByEmail(String email);
 
 }

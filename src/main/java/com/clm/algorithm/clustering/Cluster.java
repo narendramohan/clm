@@ -36,8 +36,34 @@ public class Cluster {
 
         return children;
     }
+    public List<Cluster> getAllChildren() {
+    	List<Cluster> cls = new ArrayList<Cluster>();
+        if (children == null) {
+        	children = new ArrayList<Cluster>();
+        } if(children.size()==0){
+        	
+        } else {
+        	cls.add(getAllChildren(children));
+        }
+        
+        return cls;
+    }    
 
-    public void setChildren(List<Cluster> children) {
+    private Cluster getAllChildren(List<Cluster> children2) {
+    	List<Cluster> cls = new ArrayList<Cluster>();
+    	for(Cluster c: children2){
+	        if (c.children == null) {
+	        	return c;
+	        } if(children.size()==0){
+	        	return c;
+	        } else {
+	        	return getAllChildren(children);
+	        }
+    	}
+    	return null;
+	}
+
+	public void setChildren(List<Cluster> children) {
         this.children = children;
     }
 
@@ -119,16 +145,18 @@ public class Cluster {
         return count;
     }
 
-    public void toConsole(int indent) {
+    public String toConsole(int indent) {
         for (int i = 0; i < indent; i++) {
             System.out.print("  ");
 
         }
         String name = getName() + (isLeaf() ? " (leaf)" : "") + (distance != null ? "  distance: " + distance : "");
-        System.out.println(name);
+        //System.out.println(name);
+        
         for (Cluster child : getChildren()) {
             child.toConsole(indent + 1);
         }
+        return name;
     }
 
     public double getTotalDistance() {

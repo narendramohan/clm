@@ -10,7 +10,7 @@
 	<name>clm1</name>
 
 	<properties>
-		<basedir>C:/Users/Narendra/Documents/GitHub/clm/src/main/webapp/WEB-INF/lib</basedir>
+		
 		<springframework.version>4.1.6.RELEASE</springframework.version>
 		<springsecurity.version>4.0.1.RELEASE</springsecurity.version>
 		<spring-data-jpa.version>1.9.2.RELEASE</spring-data-jpa.version>
@@ -144,8 +144,8 @@
 		</dependency>
 		<dependency>
 			<groupId>nz.ac.waikato.cms.weka</groupId>
-			<artifactId>weka-stable</artifactId>
-			<version>3.6.6</version>
+			<artifactId>weka-dev</artifactId>
+			<version>3.7.5</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.opennlp</groupId>

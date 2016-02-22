@@ -36,8 +36,7 @@ public class User
 	@Column(nullable=true)
 	private Date dob;
 	
-	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
-	@JoinColumn(name="user_id")
+	@OneToMany(fetch=FetchType.EAGER, cascade=CascadeType.MERGE ,mappedBy = "id")
 	private Set<Role> roles = new HashSet<>();
 	
 	@Column(nullable=false)
