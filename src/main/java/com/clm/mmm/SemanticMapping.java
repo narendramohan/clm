@@ -15,7 +15,26 @@ import opennlp.tools.parser.ParserFactory;
 import opennlp.tools.parser.ParserModel;
 
 public class SemanticMapping {
-
+	//Algorithm 1
+	/**
+	*	Algorithm 1 Tree Fragments Generation
+	*	Input: microblogging message corpus M
+	*	Output: a set of tree fragments (F)
+	*	1: F   null
+	*	2: for m in M do
+	*	3: m0 =  Lexical Tokens (m)
+	*	4: T  = Parse Tree Construction (m0)
+	*	5: T0 = {t1, t2,..., tn}   SubTrees Selection(T)
+	*	6: for sub tree t in T0 do
+	*	7: if t in {NP, VP, NN, VB} then
+	*	8: {f1, f2,..., fn} =  Fragments Selection(t)
+	*	9: F   F + {f1; f2,..., fn}
+	*	10: end if
+	*	11: end for
+	*	12: end for
+	*	13: return F
+	*
+	*/
 	public String semanticSpaceMapping(List<ParseTree> list) {
 		return null;
 
