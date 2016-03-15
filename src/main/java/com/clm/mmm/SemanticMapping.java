@@ -3,6 +3,7 @@ package com.clm.mmm;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.List;
 
 import com.clm.tree.parsing.ParseTree;
@@ -13,63 +14,65 @@ import opennlp.tools.parser.Parse;
 import opennlp.tools.parser.Parser;
 import opennlp.tools.parser.ParserFactory;
 import opennlp.tools.parser.ParserModel;
-
+/*
+Algorithm 2 Semantic Space Mapping
+Input: a set of Tree Fragments, Wikipedia, WordNet
+Output: Semantic Feature Space (SF)
+1: SF  = null
+2: for tree fragment f in F do
+3: if f in Phrase-Level then
+4: f.Query   SolrSyntax(f, AND)
+5: Wikip =  RetrievePages(f.Query)
+6: SF =  SF + WikiConcepts(Wikip)
+7: SF =  SF + WikiTopics(Wikip)
+8: else
+9: WNconcept =  WordNet.Synsets(f)
+10: SF =  SF + WNconcept
+11: end if
+12: end for
+13: return SF 
+*/
 public class SemanticMapping {
-	//Algorithm 1
-	/**
-	*	Algorithm 1 Tree Fragments Generation
-	*	Input: microblogging message corpus M
-	*	Output: a set of tree fragments (F)
-	*	1: F   null
-	*	2: for m in M do
-	*	3: m0 =  Lexical Tokens (m)
-	*	4: T  = Parse Tree Construction (m0)
-	*	5: T0 = {t1, t2,..., tn}   SubTrees Selection(T)
-	*	6: for sub tree t in T0 do
-	*	7: if t in {NP, VP, NN, VB} then
-	*	8: {f1, f2,..., fn} =  Fragments Selection(t)
-	*	9: F   F + {f1; f2,..., fn}
-	*	10: end if
-	*	11: end for
-	*	12: end for
-	*	13: return F
-	*
-	*/
-	public String semanticSpaceMapping(List<ParseTree> list) {
+
+	public String semanticSpaceMapping(List<Parse> list, List fragList) { 	
+		SyntacticDecomposition sd = new SyntacticDecomposition();
+		
+		String sf=null;
+		String query=null;
+		for(Parse p:list){
+			if(fragList.contains(p)){
+				query = solrSyntax(p,"AND");
+				String wikip = retrievePages(query);
+				sf = sf+wikiConcept(wikip);
+				sf=sf+wikiTopic(wikip);
+			} else{
+				/*String wNConcept = WordNet.Synsets(p);
+				sf=sf+wNConcept;*/
+			}
+		}
 		return null;
 
 	}
 
-	public Parse[] parseTree(String message) {
-		Parse topParses[] = null;
-		InputStream modelIn = null;
-		//sm.
-		try {
-			modelIn = new FileInputStream("en-parser-chunking.bin");
-			ParserModel model = new ParserModel(modelIn);
-			Parser parser = ParserFactory.create(model);
-			topParses = ParserTool.parseLine(message, parser, 1);
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			if (modelIn != null) {
-				try {
-					modelIn.close();
-				} catch (IOException e) {
-				}
-			}
-		}
-		return topParses;
+	private String wikiTopic(String wikip) {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
-	public static void main(String args[]){
-		SemanticMapping sm = new SemanticMapping();
-		String msg ="any tips for keeping fit?";
-		Parse ps[] = sm.parseTree(msg);
-		for(Parse p: ps){
-			System.out.println(p.getType());
-			System.out.println(p.getText());
-		}
+
+	private String wikiConcept(String wikip) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	private String retrievePages(String query) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private String solrSyntax(Parse p, String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }
