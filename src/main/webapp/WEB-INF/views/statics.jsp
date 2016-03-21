@@ -51,7 +51,7 @@
                         <a  href="admin/list"><i class="fa fa-edit fa-3x"></i> Users </a>
                     </li>
                     <li  >
-                        <a   href="statics"><i class="fa fa-bar-chart-o fa-3x"></i> Statics</a>
+                        <a   href="chart.html"><i class="fa fa-bar-chart-o fa-3x"></i> Statics</a>
                     </li>	
                      <!-- <li>
                         <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
@@ -114,84 +114,34 @@
                 </div>              
                  <!-- /. ROW  -->
                   <hr />
-<div class="row">
-            		<div class="col-md-12">
-                    <div class="panel panel-info">
+                <div class="row"> 
+                    
+                      
+                               <div class="col-md-6 col-sm-12 col-xs-12">                     
+                    <div class="panel panel-default">
                         <div class="panel-heading">
-                            Twitter posts <a href="twits" class="btn btn-primary">Get Posts</a>
+                            Bar Chart Example
                         </div>
                         <div class="panel-body">
-                        <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Message</th>
-                                            <th>description</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                       <c:forEach items="${ms}" var="post">
-										<tr>
-											<td>${post.topic}</td>
-											<td>${post.message}</td>
-										</tr>
-									</c:forEach>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <div id="morris-bar-chart"></div>
                         </div>
-                        <div class="panel-footer">
-                            
+                    </div>            
+                </div>
+                      <div class="col-md-6 col-sm-12 col-xs-12">                     
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Area Chart Example
                         </div>
-                      </div>
-                      </div>
-                      
-                      
-            	</div>
+                        <div class="panel-body">
+                            <div id="morris-area-chart"></div>
+                        </div>
+                    </div>            
+                </div> 
+                
+           </div>
             	                  
                           <!-- /. ROW  -->
-            	<div class="row">
-            		<div class="col-md-12">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Facebook posts <a href="facebook" class="btn btn-primary">Get Posts</a>
-                        </div>
-                        <div class="panel-body">
-                        <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Message</th>
-                                            <th>description</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                       nothing to display
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="panel-footer">
-                            
-                        </div>
-                      </div>
-                      </div>
-                      <div class="col-md-12">
-                    	<div class="panel panel-info">
-                        <div class="panel-heading">
-                            Clusters <a href="clusters" class="btn btn-primary">Get Clusters</a>
-                        </div>
-                        <div class="panel-body">
-                        <div class="table-responsive">
-                                &nbsp;
-                            </div>
-                        </div>
-                        <div class="panel-footer">
-                            
-                        </div>
-                      </div>
-                      </div>
-            	</div>
+            	
 			</div>
 		</div>
    	</div>

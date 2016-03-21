@@ -112,7 +112,7 @@
             		<div class="col-md-12">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            Twitter posts <a href="facebook" class="btn btn-primary">Get Posts</a>
+                            Twitter posts <a href="twits" class="btn btn-primary">Get Posts</a>
                         </div>
                         <div class="panel-body">
                         <div class="table-responsive">
@@ -124,10 +124,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       <c:forEach items="${posts}" var="post">
+                                       <c:forEach items="${ms}" var="post">
 										<tr>
+											<td>${post.topic}</td>
 											<td>${post.message}</td>
-											<td>${post.description}</td>
 										</tr>
 									</c:forEach>
                                     </tbody>
@@ -140,21 +140,6 @@
                       </div>
                       </div>
                       
-                      <div class="col-md-12">
-                    	<div class="panel panel-info">
-                        <div class="panel-heading">
-                            Clusters <a href="clusters" class="btn btn-primary">Get Clusters</a>
-                        </div>
-                        <div class="panel-body">
-                        <div class="table-responsive">
-                                &nbsp;
-                            </div>
-                        </div>
-                        <div class="panel-footer">
-                            
-                        </div>
-                      </div>
-                      </div>
                       
             	</div>
 			</div>

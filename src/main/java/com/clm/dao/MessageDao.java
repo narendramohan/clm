@@ -12,4 +12,5 @@ public interface MessageDao {
 	public void create(Message message);
 	
 	public Message findUserByTopic(String topic);
+	public void saveAllMessage(List<Message> ms);
 }

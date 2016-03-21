@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.clm.entities.Message;
 
-@Service("userDao")
+@Service("messageDao")
 public class MessageDaoImpl implements MessageDao{
 	@Autowired
 	SessionFactory sessionFactory;
@@ -33,5 +33,11 @@ public class MessageDaoImpl implements MessageDao{
 		
 		return null;
 	}
-
+	public void saveAllMessage(List<Message> ms){
+		Session s = sessionFactory.openSession();
+		s.beginTransaction();
+		for(Message m:ms)
+			s.saveOrUpdate(m);
+		s.getTransaction().commit();
+	}
 }

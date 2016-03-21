@@ -106,13 +106,13 @@ public class TwitterController {
 				
 			}
 			messageService.deleteMessages();
-			messageService.createMessage(ms);
-			
-			
+			messageService.saveAllMessage(ms);
+			model.addAttribute("user", getPrincipal());
+			model.addAttribute("ms", ms);
 		} catch (Exception e) {
 
 		}
-		return null;
+		return "twitter";
 
 	}
 
