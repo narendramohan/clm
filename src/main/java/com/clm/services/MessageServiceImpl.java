@@ -29,7 +29,7 @@ public class MessageServiceImpl implements MessageService {
 		messageRepository.flush();
 	}
 	public void deleteMessages(){
-		messageRepository.deleteAll();messageRepository.flush();
+		messageDao.deleteAll();
 	}
 	public void saveAllMessage(List<Message> ms){
 		messageDao.saveAllMessage(ms);

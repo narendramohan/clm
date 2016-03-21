@@ -110,7 +110,7 @@ public class TwitterController {
 			model.addAttribute("user", getPrincipal());
 			model.addAttribute("ms", ms);
 		} catch (Exception e) {
-
+			System.out.println(e.getMessage());
 		}
 		return "twitter";
 
