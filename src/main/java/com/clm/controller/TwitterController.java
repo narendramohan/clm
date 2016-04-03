@@ -3,7 +3,9 @@ package com.clm.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.UUID;
 
+import org.hibernate.id.UUIDGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.clm.entities.Message;
 import com.clm.entities.Topic;
 import com.clm.entities.User;
-import com.clm.services.MessageService;
+import com.clm.services.MessageService; 
 import com.clm.services.TopicService;
 import com.clm.services.UserService;
 
@@ -90,6 +92,7 @@ public class TwitterController {
 					List<Status> tweets = qr.getTweets();
 					for (Status s : tweets) {
 						m=new Message();
+						m.setId(UUID.randomUUID().toString());
 						m.setTopic(t.getName());
 						m.setMessage(s.getText());
 						ms.add(m);

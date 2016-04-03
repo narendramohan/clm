@@ -30,7 +30,7 @@ public class StatisticsController {
 		Set<String> uString = new HashSet<>();
 		List<String> msgs = new ArrayList<>();
 		int avgLen=0;
-		int c=0;
+		int c=1;
 		SyntacticDecomposition sd = new SyntacticDecomposition();
 		
 		int avgcs = 0;
@@ -46,11 +46,12 @@ public class StatisticsController {
 		int ss=0;
 		try {
 			ss = sd.createTreeFragment(msgs).size();
+			avgLen=avgLen/c;
 		} catch(Exception e){
 			ss=100;
 			Logger.getLogger(this.getClass()).debug(e.getMessage());
 		}
-		avgLen=avgLen/c;
+		
 		model.addAttribute("noofuniquewords", uString.size());
 		model.addAttribute("avgMsgLen",avgLen);
 		model.addAttribute("maxClustersize", ss);

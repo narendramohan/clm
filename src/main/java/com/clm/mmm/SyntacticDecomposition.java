@@ -96,5 +96,5 @@ public class SyntacticDecomposition {
 			System.out.println(p.getType());
 			System.out.println(p.getText());
 		}
-	}
+	} 
 }
