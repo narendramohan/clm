@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 
-import com.clm.tree.parsing.ParseTree;
+
 
 import opennlp.tools.chunker.ChunkerME;
 import opennlp.tools.cmdline.parser.ParserTool;

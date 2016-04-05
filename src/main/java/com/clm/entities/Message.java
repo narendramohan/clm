@@ -1,6 +1,7 @@
 package com.clm.entities;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,14 +10,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.id.UUIDGenerator;
+
 @Entity
 @Table(name = "message")
 public class Message implements Serializable
 {
-	public Long getId() {
+	public Message() {
+	}
+	public Message(String id, String topic, String message) {
+		super();
+		this.id = id;
+		this.topic = topic;
+		this.message = message;
+	}
+	public String getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getTopic() {
@@ -26,10 +37,9 @@ public class Message implements Serializable
 		this.topic = topic;
 	}
 	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue
+	@Id 
 	@Column(name = "id")
-	private Long id;
+	private String id;
 	@Column(name = "topic")
 	public String topic;
 	@Column(name = "message")
